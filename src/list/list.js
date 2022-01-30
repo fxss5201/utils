@@ -2,10 +2,10 @@
  * 列表
  */
 // ES5
-function List() {
-  this.listSize = 0
+function List(data = []) {
+  this.listSize = data.length
   this.pos = 0
-  this.dataStore = []
+  this.dataStore = data
   this.length = length
   this.clear = clear
   this.toString = toString
@@ -38,7 +38,7 @@ function length() {
 }
 
 function clear() {
-  this.pos = 0
+  this.pos = this.listSize = 0
   this.dataStore = []
 }
 
@@ -108,7 +108,7 @@ function currPos() {
 }
 
 function moveTo(pos) {
-  if (pos <= this.listSize - 1) {
+  if (pos >= 0 && pos <= this.listSize - 1) {
     this.pos = pos
     return true
   }
@@ -117,10 +117,10 @@ function moveTo(pos) {
 
 // ES6
 class List6 {
-  constructor() {
-    this.listSize = 0
+  constructor(data = []) {
+    this.listSize = data.length
     this.pos = 0
-    this.dataStore = []
+    this.dataStore = data
   }
 
   find(element) {
@@ -136,7 +136,7 @@ class List6 {
   }
   
   clear() {
-    this.pos = 0
+    this.pos = this.listSize = 0
     this.dataStore = []
   }
   
@@ -206,7 +206,7 @@ class List6 {
   }
   
   moveTo(pos) {
-    if (pos <= this.listSize - 1) {
+    if (pos >= 0 && pos <= this.listSize - 1) {
       this.pos = pos
       return true
     }
