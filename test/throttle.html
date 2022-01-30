@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>throttle</title>
+  <script src="https://cdn.bootcdn.net/ajax/libs/dayjs/1.4.1/dayjs.min.js"></script>
+  <script src="./../src/throttle.js"></script>
+  <script>
+    // 执行 throttle 函数返回新函数
+    const betterFn = throttle(() => console.log(`time: ${dayjs().format('YYYY-MM-DD HH:mm:ss')}，fn 节流执行了`), 1000, true)
+    window.addEventListener('resize', betterFn)
+  </script>
+</head>
+<body>
+  throttle
+</body>
+</html>

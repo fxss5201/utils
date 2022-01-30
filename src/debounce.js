@@ -27,8 +27,3 @@ function debounce(fn, wait = 50, immediate) {
   }
 }
 
-// DEMO
-// 执行 debounce 函数返回新函数
-const betterFn = debounce(() => console.log('fn 防抖执行了'), 1000, true)
-// 第一次触发 scroll 执行一次 fn，后续只有在停止滑动 1 秒后才执行函数 fn
-document.addEventListener('scroll', betterFn)
