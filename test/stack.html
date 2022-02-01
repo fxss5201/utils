@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>stack</title>
+  <script src="./../src/stack/stack.js"></script>
+  <script>
+    // const person = new stack(['fxss0', 'fxss1', 'fxss2', 'fxss3', 'fxss4', 'fxss5'])
+    // console.log('person', person)
+    // console.log('person.top', person.top)
+    // person.push('fxss6')
+    // console.log('person.top', person.top)
+    // console.log('person.pop()', person.pop())
+    // console.log('person.top', person.top)
+    // console.log('person.peek()', person.peek())
+    // console.log('person.length()', person.length())
+    // person.clear()
+    // console.log('person', person)
+
+    // const name = new stack(['fxss00', 'fxss10', 'fxss20', 'fxss30', 'fxss40'])
+    // console.log('name', name)
+    // console.log('name.top', name.top)
+    // name.push('fxss50')
+    // console.log('name.top', name.top)
+    // console.log('name.pop()', name.pop())
+    // console.log('name.top', name.top)
+    // console.log('name.peek()', name.peek())
+    // console.log('name.length()', name.length())
+    // name.clear()
+    // console.log('name', name)
+
+
+    // const person = new stack6(['fxss0', 'fxss1', 'fxss2', 'fxss3', 'fxss4', 'fxss5'])
+    // console.log('person', person)
+    // console.log('person.top', person.top)
+    // person.push('fxss6')
+    // console.log('person.top', person.top)
+    // console.log('person.pop()', person.pop())
+    // console.log('person.top', person.top)
+    // console.log('person.peek()', person.peek())
+    // console.log('person.length()', person.length())
+    // person.clear()
+    // console.log('person', person)
+
+    // const name = new stack6(['fxss00', 'fxss10', 'fxss20', 'fxss30', 'fxss40'])
+    // console.log('name', name)
+    // console.log('name.top', name.top)
+    // name.push('fxss50')
+    // console.log('name.top', name.top)
+    // console.log('name.pop()', name.pop())
+    // console.log('name.top', name.top)
+    // console.log('name.peek()', name.peek())
+    // console.log('name.length()', name.length())
+    // name.clear()
+    // console.log('name', name)
+
+    /**
+     * 将数字转化为二至九进制的数字
+     * @param {Number} num 是需要转化的数字
+     * @param {Number} base 是要转化为几进制
+    */
+    function mulBase(num, base) {
+      const stackEg = new stack()
+      do {
+        stackEg.push(num % base)
+        num = Math.floor(num / base)
+      } while (num > 0)
+      let converted = ''
+      while (stackEg.length() > 0) {
+        converted += stackEg.pop()
+      }
+      return converted
+    }
+    console.log(mulBase(8, 2))
+    console.log(parseInt(1000, 2))
+
+    /**
+     * 将二至九进制的数字转化为十进制数字
+     * @param {Number} num 是需要转化的数字
+     * @param {Number} base 是要转化为几进制
+    */
+    function basemul(num, base) {
+      const stackEg = new stack(String(num).split('').reverse())
+      let res = 0
+      while (stackEg.length() > 0) {
+        res += stackEg.pop() * Math.pow(base, stackEg.top)
+      }
+      return res
+    }
+    console.log(basemul(1000, 2))
+
+    /**
+     * 是否为回文
+     * @param {String} word 是需要判断的字符串
+    */
+    function isPalindrome(word) {
+      const stackEg = new stack(word.split(''))
+      let rword = ''
+      while (stackEg.length() > 0) {
+        rword += stackEg.pop()
+      }
+      return rword === word
+    }
+    function isPalindrome2(word) {
+      return word.split('').reverse().join('') === word
+    }
+    console.log(isPalindrome('abcdcba'))
+    console.log(isPalindrome2('abcdcba'))
+    console.log(isPalindrome('abcdc'))
+    console.log(isPalindrome2('abcdc'))                                                                                                                                                                                                                                                                  
+  </script>
+</head>
+<body>
+  stack
+</body>
+</html>
