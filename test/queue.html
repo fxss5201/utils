@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>queue</title>
+  <script src="./../src/queue/queue.js"></script>
+  <script src="./../src/queue/queueComplex.js"></script>
+  <script>
+    const person = new Queue(['fxss0', 'fxss1', 'fxss2', 'fxss3', 'fxss4', 'fxss5'])
+    console.log('person', person)
+    person.enqueue('fxss6')
+    console.log('person.toString()', person.toString())
+    console.log('person.dequeue()', person.dequeue())
+    console.log('person.toString()', person.toString())
+    console.log('person.front()', person.front())
+    console.log('person.back()', person.back())
+    console.log('person.length()', person.length())
+    console.log('person.empty()', person.empty())
+    person.clear()
+    console.log('person', person)
+
+    const person1 = new Queue6(['fxss0', 'fxss1', 'fxss2', 'fxss3', 'fxss4', 'fxss5'])
+    console.log('person1', person1)
+    person1.enqueue('fxss6')
+    console.log('person1.toString()', person1.toString())
+    console.log('person1.dequeue()', person1.dequeue())
+    console.log('person1.toString()', person1.toString())
+    console.log('person1.front()', person1.front())
+    console.log('person1.back()', person1.back())
+    console.log('person1.length()', person1.length())
+    console.log('person1.empty()', person1.empty())
+    person1.clear()
+    console.log('person1', person1)
+
+    const element1 = new Element('fxss0', 0)
+    const element2 = new Element('fxss1', 1)
+    const element3 = new Element('fxss2', 2)
+    const element4 = new Element('fxss3', 1)
+    const element5 = new Element('fxss4', 2)
+    const element6 = new Element('fxss5', 3)
+    const element7 = new Element('fxss6', 0)
+    const element8 = new Element('fxss7', 1)
+    const queueComplex = new QueueComplex()
+    queueComplex.enqueue(element1)
+    queueComplex.enqueue(element2)
+    queueComplex.enqueue(element3)
+    queueComplex.enqueue(element4)
+    queueComplex.enqueue(element5)
+    queueComplex.enqueue(element6)
+    queueComplex.enqueue(element7)
+    queueComplex.dequeue()
+    queueComplex.enqueue(element8)
+    console.log('queueComplex.front()', queueComplex.front())
+    console.log('queueComplex.back()', queueComplex.back())
+    console.log('queueComplex.toString()', queueComplex.toString())
+    console.log('queueComplex.length()', queueComplex.length())
+    console.log('queueComplex.empty()', queueComplex.empty())
+  </script>
+</head>
+<body>
+  queue
+</body>
+</html>

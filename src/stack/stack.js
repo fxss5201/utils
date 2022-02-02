@@ -9,6 +9,7 @@ function stack(data = []) {
   this.push = push
   this.pop = pop
   this.peek = peek
+  this.toString = toString
   this.clear = clear
   this.length = length
 }
@@ -25,6 +26,10 @@ function pop() {
 
 function peek() {
   return this.top > 0 ? this.dataStore[this.top - 1] : undefined
+}
+
+function toString() {
+  return this.dataStore.join()
 }
 
 function clear() {
@@ -55,6 +60,10 @@ class stack6 {
   
   peek() {
     return this.top > 0 ? this.dataStore[this.top - 1] : undefined
+  }
+  
+  toString() {
+    return this.dataStore.join()
   }
   
   clear() {
