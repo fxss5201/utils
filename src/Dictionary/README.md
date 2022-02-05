@@ -14,3 +14,4 @@
 | count | 方法 | `count()` 返回字典中 键值对 的个数 |
 | showAll | 方法 | `showAll()` 将字典中的所有 键值对 转换为字符串，以 `,` 分隔 |
 | showAllSort | 方法 | `showAllSort()` 将字典中的所有键按照 `sort` 排序，之后将所有 键值对 转换为字符串，以 `,` 分隔 |
+| clear | 方法 | `clear()` 清空字典 |

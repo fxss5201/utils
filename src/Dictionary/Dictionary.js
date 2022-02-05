@@ -42,4 +42,11 @@ class Dictionary {
     })
     return res.slice(1)
   }
+
+  clear() {
+    this.getKeys().forEach(key => {
+      delete this.dataStore[key]
+    })
+    this.dataStore = {}
+  }
 }
